@@ -64,6 +64,7 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 
 ![Initial commit](images/Screenshot_initial_commit.png)
 
+
 ### Identify classes, methods, and attributes
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
@@ -97,9 +98,9 @@ After reading the task requirements, you should be able to identify the classes,
 **Evidencing:**
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
 
-```markdown
-![Added stubs for classes](images/stubs-for-classes.png)
-```
+
+![Added stubs for classes](/images/stubs-for-classes.png)
+
 
 ### Add constructors and attributes to the classes
 
