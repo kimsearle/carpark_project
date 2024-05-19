@@ -363,10 +363,14 @@ You may want to see the number of available bays, the current temperature, and t
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 > Q. Which class is responsible for the number of available bays (and why)?
->
+> CarPark - stores the plates information and capacity
+> 
 > Q. Which class is responsible for the current temperature (and why)?
->
+>  Sensor class would have a method to read the temperature, then send the information to the display
+> 
 > Q. Which class is responsible for the time (and why)?
+> Sensor class could have method included to read the time at the same time the temperature is recorded 
+> 
 
 ---
 
