@@ -205,6 +205,8 @@ s1
 s2
 ```
 
+![Added tags](\images\Screenshot_tags.png)
+
 ### Relate the classes
 
 Let's consider how the classes relate to each other. We can start by using a sequence diagram to illustrate class interactions. A sequence diagram shows the interactions between objects in a sequential order. The following diagram shows the interactions between the `CarPark`, `Sensor`, and `Display` classes.
