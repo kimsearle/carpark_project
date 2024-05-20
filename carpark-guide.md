@@ -438,9 +438,9 @@ git push --tags
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
+
 ![Added methods to the car park class](images/methods-to-car-park.png)
-```
+
 
 Answer the following questions:
 
@@ -449,15 +449,15 @@ Answer the following questions:
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >
 >    - _The number of available bays_
->      `Answer here...`
+>      `Car_Park - uses the available_bays method to count the number of plates and compares it to the capacity.`
 >    - _The current temperature_
->      `Answer here...`
+>      `Sensor records the current temp`
 >    - _The time_
->      `Answer here...`
+>      `Sensor will timestamp the temprature recording`
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `attributes: directly stored data for an object, prperties are like attributes, but require logic and allows for getting, selecting and deleting the values.`
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `advantage: using key, value pairs makes it easier to access information, without needing to worry about positionals. Disadvantage: dictionaries use more memory storage, so may take longer to retreive the k,v pairs in larger dictionaries`
 
 #### Add a detect vehicle method to the Sensor class
 

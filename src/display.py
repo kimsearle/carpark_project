@@ -7,7 +7,6 @@ class Display:
         self.is_on = is_on
         self.car_park = car_park
 
-
     def __str__(self):
         return f"{self.disp_id}: {self.message}"
 
