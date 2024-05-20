@@ -1,4 +1,3 @@
-from car_park import Car_park
 class Display:
 
     def __init__(self, disp_id="", message="", is_on=False, car_park=None):
@@ -13,4 +12,3 @@ class Display:
     def update(self, data):
         for key, value in data.items():
             print(f"{key}: {value}")
-
