@@ -1,4 +1,4 @@
-from random import random
+import random
 from abc import ABC, abstractmethod
 
 
@@ -16,7 +16,7 @@ class Sensor(ABC):
         return f"Sensor: {self.sensor_id}, is active: {self.is_active}"
 
     def _scan_plate(self):
-        return random.choice(self.car_park.plates)
+        return 'FAKE-' + format(random.randint(0, 999), "03d")
 
     def detect_vehicle(self):
         plate = self._scan_plate()
