@@ -1,16 +1,18 @@
 from src.sensor import Sensor
 from src.display import Display
 from pathlib import Path
+from datetime import datetime
 
 
 class CarPark:
-    def __init__(self, location, capacity, plates=None, sensors=None, displays=None, log_file="log.txt"):
+    def __init__(self, location, capacity, plates=None, sensors=None, displays=None, log_file=Path("log.txt")):
         self.location = location
         self.capacity = capacity
         self.sensors = sensors or []
         self.plates = plates or []
         self.displays = displays or []
-        self.log_file = Path(log_file)
+        self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
+        self.log_file.touch(exist_ok=True)
 
     def __str__(self):
         return f'Car park at {self.location}, with {self.capacity} bays'
@@ -32,6 +34,7 @@ class CarPark:
         if self.available_bays > 0:
             self.plates.append(plate)
             self.update_displays()
+            self._log_car_activity(plate, "entered")
         else:
             print("Car park is full.")
 
@@ -39,6 +42,7 @@ class CarPark:
         if plate in self.plates:
             self.plates.remove(plate)
             self.update_displays()
+            self._log_car_activity(plate, "exited")
         else:
             raise ValueError(f"Car with plate {plate} not found.")
 
@@ -47,6 +51,6 @@ class CarPark:
         for display in self.displays:
             display.update(data)
 
-    def log_action(self, message):
-        with self.log_file.open("a") as log:
-            log.write(f"{message}\n")
+    def _log_car_activity(self, plate, action):
+        with self.log_file.open("a") as f:
+            f.write(f"{plate} {action} at {datetime.now():%Y-%m-%d %H:%M:%S}\n")
