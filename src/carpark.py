@@ -1,14 +1,16 @@
 from src.sensor import Sensor
 from src.display import Display
+from pathlib import Path
 
 
 class CarPark:
-    def __init__(self, location, capacity, plates=None, sensors=None, displays=None):
+    def __init__(self, location, capacity, plates=None, sensors=None, displays=None, log_file="log.txt"):
         self.location = location
         self.capacity = capacity
         self.sensors = sensors or []
         self.plates = plates or []
         self.displays = displays or []
+        self.log_file = Path(log_file)
 
     def __str__(self):
         return f'Car park at {self.location}, with {self.capacity} bays'
@@ -44,3 +46,7 @@ class CarPark:
         data = {"available_bays": self.available_bays, "temperature": 25}
         for display in self.displays:
             display.update(data)
+
+    def log_action(self, message):
+        with self.log_file.open("a") as log:
+            log.write(f"{message}\n")
