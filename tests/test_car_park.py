@@ -79,9 +79,9 @@ class TestCarPark(unittest.TestCase):
             "capacity": 100,
             "log_file": "config_log.txt"
         }
-        with open("test_config.json", "w") as f:
+        with open("../test_config.json", "w") as f:
             json.dump(config_data, f)
-        car_park_from_config = CarPark.from_config("test_config.json")
+        car_park_from_config = CarPark.from_config("../test_config.json")
         self.assertEqual(car_park_from_config.location, "Mars")
         self.assertEqual(car_park_from_config.capacity, 100)
         self.assertEqual(car_park_from_config.log_file, Path("config_log.txt"))
